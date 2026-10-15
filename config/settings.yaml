@@ -1,0 +1,20 @@
+system:
+  env: "development"
+  log_level: "INFO"
+
+# 层级一：证据结构建模配置
+evidence_modeling:
+  similarity_threshold: 0.12        # 建立跨文档关联边的余弦相似度门槛
+  intra_conflict_penalty: 0.35      # 内部逻辑互斥惩罚系数
+  confidence_cutoff: 0.30           # 准入置信度过滤门槛
+
+# 层级二：反事实效用推理配置
+counterfactual_reasoning:
+  k_hop: 2                          # K阶邻域范围 (建筑多文档链条推荐为2)
+  centrality_metric: "pagerank"     # 中心性度量方式
+  damping_factor: 0.85
+
+# 路径配置
+paths:
+  raw_docs_dir: "data/raw_documents"
+  test_cases_dir: "data/test_cases/benchmark_600_cases.json"

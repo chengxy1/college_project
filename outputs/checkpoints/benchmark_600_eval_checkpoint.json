@@ -1,0 +1,97 @@
+{
+  "completed_stages": [
+    "baseline_comparison",
+    "ablation_study",
+    "fidelity_analysis"
+  ],
+  "results": {
+    "baseline_comparison": [
+      {
+        "对比基线模型": "BM25 (传统检索)",
+        "NDCG@4": 0.6697,
+        "MRR": 0.7876,
+        "Factuality@1": "95.2%",
+        "Factuality@3": "95.9%"
+      },
+      {
+        "对比基线模型": "Dense Embedding (向量召回)",
+        "NDCG@4": 0.6561,
+        "MRR": 0.7836,
+        "Factuality@1": "95.8%",
+        "Factuality@3": "96.0%"
+      },
+      {
+        "对比基线模型": "Cross-Encoder (深度交互)",
+        "NDCG@4": 0.656,
+        "MRR": 0.7828,
+        "Factuality@1": "95.7%",
+        "Factuality@3": "96.0%"
+      },
+      {
+        "对比基线模型": "LLM-as-a-judge (大模型打分)",
+        "NDCG@4": 0.618,
+        "MRR": 0.6672,
+        "Factuality@1": "82.2%",
+        "Factuality@3": "92.2%"
+      },
+      {
+        "对比基线模型": "EBR-CFR (本文提出框架)",
+        "NDCG@4": 0.8255,
+        "MRR": 0.9304,
+        "Factuality@1": "98.5%",
+        "Factuality@3": "97.2%"
+      }
+    ],
+    "ablation_study": [
+      {
+        "消融实验变体": "EBR-CFR-full (完整框架)",
+        "NDCG@4": 0.8255,
+        "MRR": 0.9304,
+        "Factuality@1": "98.5%",
+        "Factuality@3": "97.2%"
+      },
+      {
+        "消融实验变体": "w/o 反事实效用推理 (-Counterfactual)",
+        "NDCG@4": 0.6701,
+        "MRR": 0.7876,
+        "Factuality@1": "95.5%",
+        "Factuality@3": "95.9%"
+      },
+      {
+        "消融实验变体": "w/o 跨文档证据网络 (-CrossDoc)",
+        "NDCG@4": 0.6728,
+        "MRR": 0.7918,
+        "Factuality@1": "95.5%",
+        "Factuality@3": "95.9%"
+      },
+      {
+        "消融实验变体": "仅保留单文档内部一致性 (-IntraOnly)",
+        "NDCG@4": 0.6332,
+        "MRR": 0.7581,
+        "Factuality@1": "98.0%",
+        "Factuality@3": "98.0%"
+      }
+    ],
+    "fidelity_analysis": [
+      {
+        "局部近似邻域阶数": "K = 1 阶邻域",
+        "Kendall-Tau 排序一致性": 1.0,
+        "平均相对误差 (Relative Error)": "0.00%",
+        "计算耗时削减率 (理论估计)": "50.0%"
+      },
+      {
+        "局部近似邻域阶数": "K = 2 阶邻域",
+        "Kendall-Tau 排序一致性": 1.0,
+        "平均相对误差 (Relative Error)": "0.00%",
+        "计算耗时削减率 (理论估计)": "66.7%"
+      },
+      {
+        "局部近似邻域阶数": "K = 3 阶邻域",
+        "Kendall-Tau 排序一致性": 1.0,
+        "平均相对误差 (Relative Error)": "0.00%",
+        "计算耗时削减率 (理论估计)": "75.0%"
+      }
+    ]
+  },
+  "last_updated": "2026-10-15 15:25:25"
+}
